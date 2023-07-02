@@ -1,0 +1,4 @@
+ru\otus\spring\chatservice\model\ChatRoom$ChatRoomBuilder.class
+ru\otus\spring\chatservice\model\ChatNotification$ChatNotificationBuilder.class
+ru\otus\spring\doman\Users$UsersBuilder.class
+ru\otus\spring\chatservice\model\ChatMessage$ChatMessageBuilder.class
