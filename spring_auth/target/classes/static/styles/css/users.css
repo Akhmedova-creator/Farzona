@@ -1,0 +1,50 @@
+#navbar {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 170px;
+    left: 0;
+    top: 40px;
+    position: fixed;
+
+}
+
+#btnMenu {
+    height: 40px;
+    width: 40px;
+    color: red;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
+
+#navbar a {
+    background-color: white;
+    color: red;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+#searchTb {
+    left: 0;
+    top: 60px;
+    position: absolute;
+
+}
+
+#usersTb {
+    left: 0;
+    top: 180px;
+    position: absolute;
+}
+
+#searchIm {
+    left: 0;
+    top: 0;
+    position: fixed;
+}

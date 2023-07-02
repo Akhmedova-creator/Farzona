@@ -1,0 +1,16 @@
+package ru.otus.spring.page;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+@Controller
+public class MainPageController {
+    @GetMapping("/list")
+    public String mainPage() {
+        return "main";
+    }
+
+    @GetMapping("/chat")
+    public String chatPage() {
+        return "chat";
+    }
+}

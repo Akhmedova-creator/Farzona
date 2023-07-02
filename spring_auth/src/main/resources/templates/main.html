@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/cookies.js}"></script>
+</head>
+<body th:style="'background: url(/images/users.png) no-repeat center center fixed;  background-size: cover; '">
+<h1 th:style="'color: red;'">Fara.ru - сайт для успешных мужчин и достойных женщин</h1>
+<div th:style="'color: red;'">
+<p>Сайт предназначен для успешных мужчин, которые устали платить деньги за интим  и хотят найти соответствующих им девушек - достойных.</p>
+<p>Для этого на сайте при регистрации необходимо заполнить профессию , иначе не получиться зарегистрироваться. Также на сайте есть возможность </p>
+<p>искать девушек по профессии. Никому не секрет, что девушка с хорошим образованием  также хорошо воспитаная и приличная.</p>
+<p>Девушкам наш сайт тоже подходит, так как многие девушки устали встречаться с мужчинами, которые не готовы ухаживать , дарить цветы и  </p>
+<p>и проявлять заботу. Правила нашего сайта таковы,  что девушки не должны просить деньги за встречи, а мужчины также не должны предлагать   </p>
+<p> одноразовые встречи и готовы организовать, как минимум, роматический ужин :) . Также на сайте есть много интересных фич:</p>
+<p>поиск по национальности, интересные тесты и рейтинги.</p>
+</div>
+
+<h3 th:style="'color: red;'"><a href="/registration">Зарегистрироваться</a> или <a href="/users">Войти</a> </h3>
+<h2 th:style="'color: red;'">Хотят познакомиться</h2>
+<table class="users">
+    <thead>
+    <tr border="0"></tr>
+    <th></th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+
+    $(function () {
+        $.get('getUsers').done(function (users) {
+            users.forEach(function (user) {
+                if ((user.login===$.cookie('user'))&&(user.password===$.cookie('pass') )){
+                    console.log("same values");
+                }
+
+                else
+                {
+                    var image="/images/"+user.photoName
+                    $('tbody').append(`
+                    <tr>
+                        <td> <img src = ${image} width="220" height="220"  /></td>
+                         <td> <div  style="color: red;">
+                              <p >логин: ${user.login}</p>
+                              <p>пол: ${user.isWoman}</p>
+                              <p>возраст: ${user.age}</p>
+                              <p>профессия: ${user.job}</p>
+                              <p>национальность: ${user.national}</p>
+                              <p>город: ${user.town}</p>
+                              </div>
+                         </td>
+                    </tr>
+                `)
+                }});
+        })
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/cookies.js}"></script>
+
+
+</head>
+<body th:style="'background: url(/images/users.png) no-repeat center center fixed;  background-size: cover; '">
+
+<table class="users">
+    <thead>
+    <tr border="0"></tr>
+    <th></th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+
+    $(function () {
+        $.get('/getUsersMsg', {login: $.cookie('user'), pass: $.cookie('pass')}).done(function (users) {
+            users.forEach(function (user) {
+                var linkCount = "Сообщения";
+                if ((user.login === $.cookie('user')) && (user.password === $.cookie('pass'))) {
+                    console.log("fff tut");
+                } else {
+                    var image = "/images/" + user.photoName
+                    $.get("/getOneUser", {login: $.cookie('user'), pass: $.cookie('pass')}).done(function (userOne) {
+                        $.get("/messages/counts", {senderId: user.id, recipientId: userOne.id}).done(function (count) {
+                            if(count>0) {
+                                linkCount = linkCount + '(' + count + ')';
+                            }
+                            $('tbody').append(`
+                    <tr>
+                        <td> <img src = ${image} width="220" height="220"  /></td>
+                         <td> <div  style="color: red;">
+                              <p >логин: ${user.login}</p>
+                              <p>пол: ${user.isWoman}</p>
+                              <p>возраст: ${user.age}</p>
+                              <p>профессия: ${user.job}</p>
+                              <p>национальность: ${user.national}</p>
+                              <p>город: ${user.town}</p>
+                              <p> <a href="/chat/${user.id}/${user.login}">${linkCount}</a> </p>
+                              </div>
+                         </td>
+                    </tr>
+                `)
+                        });
+                    });
+                }
+            });
+        })
+    });
+
+</script>
+</script>
+</body>
+</html>
