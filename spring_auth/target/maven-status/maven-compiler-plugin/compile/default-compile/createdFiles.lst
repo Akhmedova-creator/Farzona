@@ -31,7 +31,6 @@ ru\otus\spring\chatservice\service\ChatRoomService.class
 ru\otus\spring\doman\Users$UsersBuilder.class
 ru\otus\spring\doman\Photos.class
 ru\otus\spring\doman\Author.class
-ru\otus\spring\chatservice\ChatServiceApplication.class
 ru\otus\spring\repository\AuthorRepository.class
 ru\otus\spring\chatservice\repository\ChatRoomRepository.class
 ru\otus\spring\Main.class
