@@ -32,7 +32,7 @@
         });
 
         function connect() {
-            var socket =  new SockJS("http://158.160.110.147:9999/ws");
+            var socket =  new SockJS("http://158.160.56.69:9999/ws");
             stompClient = Stomp.over(socket);msg
             stompClient.connect({}, function(frame) {
                 console.log('Connected: ' + frame);

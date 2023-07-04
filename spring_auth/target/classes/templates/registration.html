@@ -5,6 +5,7 @@
   <title>Add CSS and JS to Thymeleaf</title>
   <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" th:src="@{/js/error.js}"></script>
 
 </head>
 <body th:style="'background: url(/images/main.png) no-repeat center center fixed;  background-size: cover;'">
@@ -540,87 +541,75 @@
     <option value="tobolsk">Тобольск</option>
     <option value="noyabrsk">Ноябрьск</option>
   </select>
-</div>
-  </p>
   <p>Загрузить фото профиля</p>
   <p><input type="file" id="js-file"></p>
+</div>
+  </p>
+
   <p class="form-actions"><button type="submit" >Зарегистрироваться</button> </p>
 </form>
-  <p th:style=" 'font-size: 2rem;'"><a href="/list"  >назад</a></a></p>
+  <p th:style=" 'font-size: 2rem;'"><a href="/"  >назад</a></a></p>
 </div>
 <script>
-    $(function () {
-        var formData = new FormData();
+  $(function () {
+    var formData = new FormData();
 
-        $("#js-file").change(function () {
-            if (window.FormData === undefined) {
-                throw('В вашем браузере FormData не поддерживается')
-            } else {
-                formData.append('file', $("#js-file")[0].files[0]);
-            }
-        });
-
-        $('button').bind('click', function () {
-            var isWoman = '-1';
-
-            if ($('#man_female').prop("checked")) {
-                isWoman = 'мужской';
-            }
-
-            if ($('#woman_female').prop("checked")) {
-                isWoman = 'женский';
-            }
-
-            formData.append('login', $('#login').val())
-            formData.append('password', $('#password').val())
-            formData.append('isWoman', isWoman)
-            formData.append('age', $('#selectAge option:selected').html())
-            formData.append('job', $('#selectJob option:selected').html())
-            formData.append('national', $('#selectNationality option:selected').html())
-            formData.append('town', $('#selectTown option:selected').html())
-
-            if (($('#login').val() === '') || ($('#password').val() === '') ||
-                (formData.get('isWoman') === '-1') || ($('#selectAge').val() === 'nullAge') ||
-                ($('#selectJob').val() === 'nullJob') ||
-                ($('#selectNationality').val() === 'nullNat') ||
-                ($('#selectTown').val() === 'nullTown')) {
-                throw('Ошибка. Логин, пароль,пол, возраст, профессия, национальность и город проживания являются обязательными параметрами. Заполните их');
-            }
-            var trueFormat = false;
-
-            try {
-                if ($("#js-file")[0].files[0] != null) {
-                    var nameFile = $("#js-file")[0].files[0].name;
-                    if ((nameFile.indexOf(".jpg") >= 0) || (nameFile.indexOf(".png") >= 0) || (nameFile.indexOf(".jpeg") >= 0)
-                    (nameFile.indexOf(".JPG") >= 0) || (nameFile.indexOf(".PNG") >= 0) || (nameFile.indexOf(".JPEG") >= 0))
-                        trueFormat = true;
-                }
-            } catch (e) {
-                throw('Недопустимый тип файла.Загрузить можно только типы файлов с расширением: .jpg, .png, .jpeg');
-            }
-            if (trueFormat === false)
-                throw('Недопустимый тип файла.Загрузить можно только типы файлов с расширением: .jpg, .png, .jpeg');
-
-            $('#form').remove();
-
-            $.ajax({
-                type: "POST",
-                url: '/savePhoto',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: formData,
-                function(data,status){
-                    if (status==='success') {
-                        alert('Успешно обновлены данные!')
-                    } else {
-                        throw('Ошибки при обновлении! Проверьте корректность данных'+msg.error);
-                    }
-                }
-            })
-
-        })
+    $("#js-file").change(function () {
+      if (window.FormData === undefined) {
+        throw('В вашем браузере FormData не поддерживается')
+      } else {
+        formData.append('file', $("#js-file")[0].files[0]);
+      }
     });
+
+    $('button').bind('click', function () {
+
+      var isWoman = '-1';
+
+      if ($('#man_female').prop("checked")) {
+        isWoman = 'мужской';
+      }
+
+      if ($('#woman_female').prop("checked")) {
+        isWoman = 'женский';
+      }
+
+      formData.append('login', $('#login').val())
+      formData.append('password', $('#password').val())
+      formData.append('isWoman', isWoman)
+      formData.append('age', $('#selectAge option:selected').html())
+      formData.append('job', $('#selectJob option:selected').html())
+      formData.append('national', $('#selectNationality option:selected').html())
+      formData.append('town', $('#selectTown option:selected').html())
+
+      if (($('#login').val() === '') || ($('#password').val() === '') ||
+              (formData.get('isWoman') === '-1') || ($('#selectAge').val() === 'nullAge') ||
+              ($('#selectJob').val() === 'nullJob') ||
+              ($('#selectNationality').val() === 'nullNat') ||
+              ($('#selectTown').val() === 'nullTown')) {
+        throw('Ошибка. Логин, пароль,пол, возраст, профессия, национальность и город проживания являются обязательными параметрами. Заполните их');
+      }
+
+      $('#form').remove();
+
+      $.ajax({
+        type: "POST",
+        url: '/savePhoto',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        function(data,status){
+          if (status==='success') {
+            alert('Успешно обновлены данные!')
+          } else {
+            throw('Ошибки при обновлении! Проверьте корректность данных'+msg.error);
+          }
+        }
+      })
+
+    })
+  });
 </script>
 </div>
 </body>
