@@ -89,25 +89,29 @@ public class UsersController {
     public void savePage(@ModelAttribute FormWrapper model) {
         String ROLE = "USER";
         System.out.println("вывод страницы " + model);
-
-        String formatOfPicture = Objects.requireNonNull(model.getFile().getOriginalFilename()).substring(model.getFile().getOriginalFilename().indexOf('.'));
-        String namePhoto = model.getLogin()
-                +String.valueOf(LocalDateTime.now().atZone(ZoneId.systemDefault())
-                .toInstant().toEpochMilli())+formatOfPicture;
         try {
+            if(model.getFile()!=null) {
+                String formatOfPicture = Objects.requireNonNull(model.getFile().getOriginalFilename()).substring(model.getFile().getOriginalFilename().indexOf('.'));
+                String namePhoto = model.getLogin()
+                        + String.valueOf(LocalDateTime.now().atZone(ZoneId.systemDefault())
+                        .toInstant().toEpochMilli()) + formatOfPicture;
 
-            serviceUsers.saveUsers(new Users(model.getLogin(), model.getPassword(), ROLE, model.getIsWoman(),
-                    model.getAge(), model.getJob(), model.getNational(), model.getTown(),namePhoto));
-            saveUploadedFile(model.getFile().getBytes() , namePhoto);
+                serviceUsers.saveUsers(new Users(model.getLogin(), model.getPassword(), ROLE, model.getIsWoman(),
+                        model.getAge(), model.getJob(), model.getNational(), model.getTown(), namePhoto));
+                saveUploadedFile(model.getFile().getBytes(), namePhoto);
 
-            File fileInMyDirect = new File(PATH_NAME +namePhoto);
-            BufferedImage newImage= scale(ImageIO.read(fileInMyDirect),fileInMyDirect,170,220);
-            ImageIO.write(newImage, "png", fileInMyDirect);
+                File fileInMyDirect = new File(PATH_NAME + namePhoto);
+                BufferedImage newImage = scale(ImageIO.read(fileInMyDirect), fileInMyDirect, 170, 220);
+                ImageIO.write(newImage, "png", fileInMyDirect);
 
 
-            byte[] byteInMyDirect =Files.readAllBytes(fileInMyDirect.toPath());
-            saveUploadedFile(byteInMyDirect , namePhoto);
+                byte[] byteInMyDirect = Files.readAllBytes(fileInMyDirect.toPath());
+                saveUploadedFile(byteInMyDirect, namePhoto);
 
+            } else
+
+                serviceUsers.saveUsers(new Users(model.getLogin(), model.getPassword(), ROLE, model.getIsWoman(),
+                        model.getAge(), model.getJob(), model.getNational(), model.getTown(), null));
 
 
         } catch (IOException e) {
