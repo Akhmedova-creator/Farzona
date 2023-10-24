@@ -1,6 +1,6 @@
 server:
   port: 80
-# The format used for the keystore. It could be set to JKS in case it is a JKS file
+  # The format used for the keystore. It could be set to JKS in case it is a JKS file
   ssl:
     enabled: true
     key-store-type: PKCS12
@@ -8,8 +8,6 @@ server:
     key-store: classpath:ssl/baeldung.p12
     # The password used to generate the certificate
     key-store-password: 919556656_f
-    # The alias mapped to the certificate
-
 
 spring:
   data:
