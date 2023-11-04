@@ -5,7 +5,7 @@ server:
     enabled: true
     key-store-type: PKCS12
     # The path to the keystore containing the certificate
-    key-store: classpath:ssl/baeldung.p12
+    key-store: classpath:ssl/certificate2.pfx
     # The password used to generate the certificate
     key-store-password: 919556656_f
 
