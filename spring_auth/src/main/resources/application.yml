@@ -12,7 +12,12 @@ server:
 spring:
   data:
     mongodb:
-      database: library
+      authentication-database: admin
+        username: root
+        password: root
+        database: dating_site
+        port: 27017
+        host: 158.160.60.155
 
   servlet:
     multipart:
