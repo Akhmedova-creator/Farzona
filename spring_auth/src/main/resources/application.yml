@@ -12,7 +12,6 @@ server:
 spring:
   data:
     mongodb:
-      authentication-database: admin
       username: root
       password: root
       database: dating_site
