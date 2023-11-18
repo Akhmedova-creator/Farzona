@@ -17,7 +17,8 @@ spring:
       password: root
       database: dating_site
       port: 27017
-      host: 158.160.60.155
+      host: localhost
+
 
   servlet:
     multipart:
