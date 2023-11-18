@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add CSS and JS to Thymeleaf</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/cookies.js}"></script>
+</head>
+<body th:style="'background: url(/images/main.png) no-repeat center center fixed;  background-size: cover;'">
+<p>
+    <form name="f" th:action="@{/perform-login}" method="post"
+          th:style="'font-size: 1rem; color: red; text-indent: 100px; font-family: Henny Penny, cursive;  '">
+        <p th:style=" 'font-size: 2rem;'">Вход</p>
+
+         <p th:if="${param.error}" class="alert alert-error">Неправильные имя и пароль.</p>
+
+           <p><label for="user" >Имя</label>
+            <input type="text"  id="user" name="user" /></p>
+
+            <p><label for="pass" >Пароль</label>
+            <input type="password"  id="pass" name="pass"/></p>
+
+    <p class="form-actions"><button id="btn" type="submit" >Войти</button> У вас есть логин ? <a href="/registration">Зарегистрироваться</a></p>
+    </form>
+</div>
+<script>
+    $(function () {
+        $('button').bind('click', function(){
+           $.cookie('user', $('#user').val());
+            $.cookie('pass', $('#pass').val());
+        });
+
+    });
+    $(window).on("error", function(evt) {
+
+        console.log("jQuery error event:", evt);
+        var e = evt.originalEvent; // get the javascript event
+        console.log("original event:", e);
+        if (e.message) {
+            alert(e.message);
+        } else {
+            alert("Error:\n\t" + e.type + "\nElement:\n\t" + (e.srcElement || e.target));
+        }
+    });
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add CSS and JS to Thymeleaf</title>
+  <link th:href="@{/styles/css/main.css}" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" th:src="@{/js/error.js}"></script>
+
+</head>
+<body th:style="'background: url(/images/main.png) no-repeat center center fixed;  background-size: cover;'">
+
+<div class="removeMe" id="myDiv1">
+<!--<p th:style="'font-size: 5rem; color: red; text-indent: 100px; font-family: Henny Penny, cursive;'">RichMen</p>-->
+<p>
+<form id ="form" name="form" th:style="'font-size: 1rem; color: red; text-indent: 100px; font-family: Henny Penny, cursive;  '">
+  <p id="name" th:style=" 'font-size: 2rem;'">Регистрация</p>
+
+  <p><label for="login" >Имя</label>
+    <input type="text"  id="login" name="login" /></p>
+
+  <p><label for="password" >Пароль</label>
+    <input  type="password"  id="password" name="password"/> </select>
+  </p>
+  <p>
+  <fieldset >
+    <legend >Пол</legend>
+
+    <div>
+      <input type="radio" id="woman_female" name="female" value="Ж">
+      <label for="woman_female">Ж</label>
+    </div>
+
+    <div>
+      <input type="radio" id="man_female" name="female" value="М">
+      <label for="man_female">М</label>
+    </div>
+  <div>
+
+  </div>
+
+  </fieldset>
+  </p>
+  <p>
+  <div>Выберите возраст</div><div>
+  <select id="selectAge">
+    <option value="nullAge"></option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    <option value="32">32</option>
+    <option value="33">33</option>
+    <option value="34">34</option>
+    <option value="35">35</option>
+    <option value="36">36</option>
+    <option value="37">37</option>
+    <option value="38">38</option>
+    <option value="39">39</option>
+    <option value="40">40</option>
+    <option value="41">41</option>
+    <option value="42">42</option>
+    <option value="43">43</option>
+    <option value="44">44</option>
+    <option value="45">45</option>
+    <option value="46">46</option>
+    <option value="47">47</option>
+    <option value="48">48</option>
+    <option value="49">49</option>
+    <option value="50">50</option>
+    <option value="51">51</option>
+    <option value="52">52</option>
+    <option value="53">53</option>
+    <option value="54">54</option>
+    <option value="55">55</option>
+    <option value="56">56</option>
+    <option value="57">57</option>
+    <option value="58">58</option>
+    <option value="59">59</option>
+    <option value="60">60</option>
+    <option value="61">61</option>
+    <option value="62">62</option>
+    <option value="63">63</option>
+    <option value="64">64</option>
+    <option value="65">65</option>
+    <option value="66">66</option>
+    <option value="67">67</option>
+    <option value="68">68</option>
+    <option value="69">69</option>
+    <option value="70">70</option>
+    <option value="71">71</option>
+    <option value="72">72</option>
+    <option value="73">73</option>
+    <option value="74">74</option>
+    <option value="75">75</option>
+    <option value="76">76</option>
+    <option value="77">77</option>
+    <option value="78">78</option>
+    <option value="79">79</option>
+    <option value="80">80</option>
+  </select>
+</div>
+  </p>
+
+  <p>
+  <div>Выберите профессию</div><div>
+    <select id="selectJob">
+      <option value="nullJob"></option>
+      <option value="agent">агент</option>
+      <option value="agent real estate">агент по недвижимости</option>
+      <option value="actor">актер</option>
+      <option value="animator">аниматор</option>
+      <option value="architect">архитектор</option>
+      <option value="bartender">бармен</option>
+      <option value="unemployed">безработный</option>
+      <option value="librarian">библиотекарь</option>
+      <option value="businessman">бизнесмен</option>
+      <option value="accountant">бухгалтер</option>
+      <option value="veterinarian">ветеринар</option>
+      <option value="driver">водитель</option>
+      <option value="military">военный</option>
+      <option value="educator">воспитатель</option>
+      <option value="doctor">врач</option>
+      <option value="geologist">геолог</option>
+      <option value="graphicDesigner">графический дизайнер</option>
+      <option value="janitor">дворник</option>
+      <option value="diplomat">дипломат</option>
+      <option value="housekeeper">домработник</option>
+      <option value="journalist">журналист</option>
+      <option value="engineer">инженер</option>
+      <option value="mason">каменщик</option>
+      <option value="composer">композитор</option>
+      <option value="cosmetologist">косметолог</option>
+      <option value="pilot">летчик</option>
+      <option value="masterOfDecorativeWorks">мастер декоративных работ</option>
+      <option value="machinist">машинист</option>
+      <option value="nurse">медсестра</option>
+      <option value="manager">менеджер</option>
+      <option value="microbiologist">микробиолог</option>
+      <option value="hairdresser">парикмахер</option>
+      <option value="translator">переводчик</option>
+      <option value="polygraphist">полиграфист</option>
+      <option value="policeman">полицейский</option>
+      <option value="policeman">предприниматель</option>
+      <option value="conductor">проводник</option>
+      <option value="conductor">программист</option>
+      <option value="salesman">продавец</option>
+      <option value="beekeeper">пчеловод</option>
+      <option value="restorer">реставратор</option>
+      <option value="secretary">секретарь</option>
+      <option value="locksmith">слесарь</option>
+      <option value="specialist in hospitality">специалист по гостепримству</option>
+      <option value="carpenter">столярстоляр</option>
+      <option value="builder">строитель</option>
+      <option value="student">студент</option>
+      <option value="dancer">танцовщик</option>
+      <option value="turner">токарь</option>
+      <option value="cleaner">уборщик</option>
+      <option value="teacher">учитель</option>
+      <option value="artist">художник</option>
+      <option value="florist">цветовод</option>
+      <option value="navigator">штурман</option>
+      <option value="ecologist">эколог</option>
+      <option value="economist">экономист</option>
+      <option value="electrician">электрик</option>
+      <option value="jeweler">ювелир</option>
+      <option value="lawyer">юрист</option>
+    </select>
+  </div>
+  </p>
+
+  <p>
+  <div>Выберите национальность</div><div>
+  <select id="selectNationality">
+    <option value="nullNat"></option>
+    <option value="abazin">абазинская</option>
+    <option value="abkhazian">абхазская</option>
+    <option value="avar">аварская</option>
+    <option value="abacnone">агулская</option>
+    <option value="adjar">аджарская</option>
+    <option value="adyghe">адыгейская</option>
+    <option value="azerbaijani">азербайджанская</option>
+    <option value="aleutian">алеутская</option>
+    <option value="altaic">алтайская</option>
+    <option value="аmerican">американская</option>
+    <option value="аndean">андийская</option>
+    <option value="arab">арабская</option>
+    <option value="armenian">армянская</option>
+    <option value="archin">арчинская</option>
+    <option value="assyrian">ассирийская</option>
+    <option value="astrakhan">астраханская</option>
+    <option value="afghan">афганская</option>
+    <option value="ahvakh">ахвахская</option>
+    <option value="bagulal">багулалская</option>
+    <option value="balkarian">балкарская</option>
+    <option value="bangladeshi">бангладешская</option>
+    <option value="bashkir">башкирская</option>
+    <option value="bezhtinskaya">бежтинская</option>
+    <option value="belorussian">белорусcкая</option>
+    <option value="besermyanskaya">бесермянская</option>
+    <option value="bulgarian">болгарская</option>
+    <option value="bosnian">боснийская</option>
+    <option value="botlikh">ботлихская</option>
+    <option value="british">британская</option>
+    <option value="buryat">бурятская</option>
+    <option value="hungarian">венгерская</option>
+    <option value="vep">вепская</option>
+    <option value="vietnamese">вьетнамская</option>
+    <option value="gagauz">гагаузская</option>
+    <option value="godoberinsky">годоберинская</option>
+    <option value="greek">греческая</option>
+    <option value="georgian">грузинская</option>
+    <option value="gunib">гунибская</option>
+    <option value="dargin">даргинская</option>
+    <option value="didoy">дидойская</option>
+    <option value="dolgan">долганская</option>
+    <option value="dungan">дунганская</option>
+    <option value="jewish">еврейская</option>
+    <option value="yezidi">езидская</option>
+    <option value="izhora">ижорская</option>
+    <option value="ingiloy">ингилойская</option>
+    <option value="ingush">ингушская</option>
+    <option value="indian">индийская</option>
+    <option value="spanish">испанская</option>
+    <option value="italian">итальянская</option>
+    <option value="kabardian">кабардинская</option>
+    <option value="kazakh">казакская</option>
+    <option value="kazakh">казахская</option>
+    <option value="kaitai">кайтайская</option>
+    <option value="kalmyk">калмыкская</option>
+    <option value="kamchadal">камчадалская</option>
+    <option value="karagash">карагашская</option>
+    <option value="karaite">караимская</option>
+    <option value="karakalpak">каракалпакская</option>
+    <option value="karatinsky">каратинская</option>
+    <option value="karachay">карачаевская</option>
+    <option value="karelian">карелская</option>
+    <option value="kerek">керекская</option>
+    <option value="ket">кетская</option>
+    <option value="kyrgyz">киргизская</option>
+    <option value="сhinese">китайская</option>
+    <option value="kom">комская</option>
+    <option value="kom">комская</option>
+    <option value="korean">корейская</option>
+    <option value="koryakskaya">корякская</option>
+    <option value="krymchak">крымчакская</option>
+    <option value="kryashenskaya">кряшенская</option>
+    <option value="Kubachinskaya">кубачинская</option>
+    <option value="сuban">кубинская</option>
+    <option value="сuban">кумандинская</option>
+    <option value="kumyk">кумыкская</option>
+    <option value="kurdish">курдская</option>
+    <option value="kurman">курманская</option>
+    <option value="kurman">курманская</option>
+    <option value="lazskaya">лазская</option>
+    <option value="lak">лакская</option>
+    <option value="lankan">ланкийская</option>
+    <option value="latgalian">латгальская</option>
+    <option value="latvian">латышская</option>
+    <option value="lezgian">лезгинская</option>
+    <option value="lithuanian">литовская</option>
+    <option value="macedonian">македонская</option>
+    <option value="megrel">мегрелская</option>
+    <option value="mennonite">меннонитская</option>
+    <option value="mishar">мишарская</option>
+    <option value="moldavian">молдаванская</option>
+    <option value="mongol">монголская</option>
+    <option value="mordovian">мордовийская</option>
+    <option value="nagaibak">нагайбакская</option>
+    <option value="nanai">нанайская</option>
+    <option value="nganasan">нганасанская</option>
+    <option value="negidal">негидалская</option>
+    <option value="german">немецкая</option>
+    <option value="nenets">ненская</option>
+    <option value="nivkh">нивхская</option>
+    <option value="nogai">ногайская</option>
+    <option value="oroch">орочская</option>
+    <option value="ossetian">осетинская</option>
+    <option value="pakistani">пакистанская</option>
+    <option value="pamir">памирская</option>
+    <option value="persian">перская</option>
+    <option value="polish">полякская</option>
+    <option value="pomeranian">поморская</option>
+    <option value="romanian">румынская</option>
+    <option value="rusyn">русинская</option>
+    <option value="russian">русская</option>
+    <option value="rutul">рутульская</option>
+    <option value="sami">саамская</option>
+    <option value="svan">сванская</option>
+    <option value="selkup">селькупская</option>
+    <option value="serbian">сербская</option>
+    <option value="setuska">сетуская</option>
+    <option value="slovak">словакская</option>
+    <option value="soyot">сойотская</option>
+    <option value="tabasaran">табасаранская</option>
+    <option value="tajik">таджикская</option>
+    <option value="taz">тазская</option>
+    <option value="talysh">талышская</option>
+    <option value="tant">тантская</option>
+    <option value="tatar">татарская</option>
+    <option value="tatskaya">татская</option>
+    <option value="telengitskaya">теленгитская</option>
+    <option value="teleut">телеутская</option>
+    <option value="tindal">тиндалская</option>
+    <option value="todzhinskaya">тоджинская</option>
+    <option value="todzhinskaya">тоджинская</option>
+    <option value="tofalar">тофаларская</option>
+    <option value="tubalar">тубаларская</option>
+    <option value="tuvan">тувинская</option>
+    <option value="turkmen">туркменская</option>
+    <option value="turkmen">туркская</option>
+    <option value="udin">удинская</option>
+    <option value="udmurt">удмуртская</option>
+    <option value="udege">удэгейская</option>
+    <option value="uzbek">узбекская</option>
+    <option value="uyghur">уйгурская</option>
+    <option value="ukrainian">украинская</option>
+    <option value="ult">ултская</option>
+    <option value="ulch">ульчская</option>
+    <option value="finnish">финская</option>
+    <option value="french">французская</option>
+    <option value="khakas">хакаская</option>
+    <option value="khvarshinskaya">хваршинская</option>
+    <option value="khemshil">хемшилская</option>
+    <option value="tsakhur">цахурская</option>
+    <option value="tsakhur">цахурская</option>
+    <option value="gypsy">цыганская</option>
+    <option value="chamalal">чамалалская</option>
+    <option value="chelkal">челканская</option>
+    <option value="circassian">черкеская</option>
+    <option value="circassian">черкеская</option>
+    <option value="сircassian">черкесогайская</option>
+    <option value="montenegrin">черногорская</option>
+    <option value="czech">чешская</option>
+    <option value="chechen">чеченская</option>
+    <option value="chuvan">чуванская</option>
+    <option value="сhuvash">чувашская</option>
+    <option value="сhuvash">чувашская</option>
+    <option value="chukchi">чукотская</option>
+    <option value="chulym">чулымская</option>
+    <option value="shapsug">шапсугская</option>
+    <option value="shore">шорская</option>
+    <option value="evenk">эвенкская</option>
+    <option value="evenEskimo">эскимоская</option>
+    <option value="estonian">эстонская</option>
+    <option value="yukaghir">юкагирская</option>
+    <option value="yakut">якутская</option>
+    <option value="japanese">японская</option>
+  </select>
+</div>
+  </p>
+
+  <p>
+  <div>Выберите город</div><div>
+  <select id="selectTown">
+    <option value="nullTown"></option>
+    <option value="moscow">Москва</option>
+    <option value="saint-petersburg">Санкт-Петербург</option>
+    <option value="novosibirsk">Новосибирск</option>
+    <option value="ekaterinburg">Екатеринбург</option>
+    <option value="kazan">Казань</option>
+    <option value="nizhniyNovgorod">Нижний Новгород</option>
+    <option value="chelyabinsk">Челябинск</option>
+    <option value="krasnoyarsk">Красноярск</option>
+    <option value="samara">Самара</option>
+    <option value="ufa">Уфа</option>
+    <option value="rostovOnDon">Ростов-на-Дону</option>
+    <option value="omsk">Омск</option>
+    <option value="krasnodar">Краснодар</option>
+    <option value="voronezh">Воронеж</option>
+    <option value="perm">Пермь</option>
+    <option value="perm">Пермь</option>
+    <option value="volgograd">Волгоград</option>
+    <option value="saratov">Саратов</option>
+    <option value="tyumen">Тюмень</option>
+    <option value="togliatti">Тольятти</option>
+    <option value="barnaul">Барнаул</option>
+    <option value="izhevsk">Ижевск</option>
+    <option value="makhachkala">Махачкала</option>
+    <option value="khabarovsk">Хабаровск</option>
+    <option value="ulyanovsk">Ульяновск</option>
+    <option value="irkutsk">Иркутск</option>
+    <option value="vladivostok">Владивостокк</option>
+    <option value="yaroslavl">Ярославль</option>
+    <option value="irkutsk">Иркутск</option>
+    <option value="kemerovo">Кемерово</option>
+    <option value="tomsk">Томск</option>
+    <option value="naberezhnyeChelny">Набережные Челны</option>
+    <option value="sevastopol">Севастополь</option>
+    <option value="stavropol">Ставрополь</option>
+    <option value="orenburg">Оренбург</option>
+    <option value="orenburg">Оренбург</option>
+    <option value="novokuznetsk">Новокузнецк</option>
+    <option value="ryazan">Рязань</option>
+    <option value="balashikha">Балашиха</option>
+    <option value="penza">Пенза</option>
+    <option value="balashikha">Балашиха</option>
+    <option value="cheboksary">Чебоксары</option>
+    <option value="lipetsk">Липецк</option>
+    <option value="kaliningrad">Калининград</option>
+    <option value="astrakhan">Астрахань</option>
+    <option value="kaliningrad">Калининград</option>
+    <option value="tula">Тула</option>
+    <option value="kirov">Киров</option>
+    <option value="sochi">Сочи</option>
+    <option value="kursk">Курск</option>
+    <option value="ulanUde">Улан-Удэ</option>
+    <option value="tver">Тверь</option>
+    <option value="magnitogorsk">Магнитогорск</option>
+    <option value="surgut">Сургут</option>
+    <option value="bryansk">Брянск</option>
+    <option value="ivanovo">Иваново</option>
+    <option value="yakutsk">Якутск</option>
+    <option value="vladimir">Владимир</option>
+    <option value="simferopol">Симферополь</option>
+    <option value="belgorod">Белгород</option>
+    <option value="nizhnyTagil">Нижний Тагил</option>
+    <option value="kaluga">Калуга</option>
+    <option value="cheat">Чита</option>
+    <option value="grozny">Грозный</option>
+    <option value="volzhsky">Волжский</option>
+    <option value="smolensk">Смоленск</option>
+    <option value="podolsk">Подольск</option>
+    <option value="saransk">Саранск</option>
+    <option value="vologda">Вологда</option>
+    <option value="kurgan">Курган</option>
+    <option value="cherepovets">Череповец</option>
+    <option value="eagle">Орёл</option>
+    <option value="arkhangelsk">Архангельск</option>
+    <option value="vladikavkaz">Владикавказ</option>
+    <option value="nizhnevartovsk">Нижневартовск</option>
+    <option value="yoshkarOla">Йошкар-Ола</option>
+    <option value="sterlitamak">Стерлитамак</option>
+    <option value="murmansk">Мурманск</option>
+    <option value="kostroma">Кострома</option>
+    <option value="novorossiysk">Новороссийск</option>
+    <option value="tambov">Тамбов</option>
+    <option value="khimki">Химки</option>
+    <option value="mytishchi">Мытищи</option>
+    <option value="nalchik">Нальчик</option>
+    <option value="taganrog">Таганрог</option>
+    <option value="nizhnekamsk">Нижнекамск</option>
+    <option value="blagoveshchensk">Благовещенск</option>
+    <option value="komsomolskOnAmur">Комсомольск-на-Амуре</option>
+    <option value="petrozavodsk">Петрозаводск</option>
+    <option value="korolev">Королёв</option>
+    <option value="mines">Шахты</option>
+    <option value="engels">Энгельс</option>
+    <option value="velikyNovgorod">Великий Новгород</option>
+    <option value="lyubertsy">Люберцы</option>
+    <option value="bratsk">Братск</option>
+    <option value="staryOskol">Старый Оскол</option>
+    <option value="angarsk">Ангарск</option>
+    <option value="syktyvkar">Сыктывкар</option>
+    <option value="dzerzhinsk">Дзержинск</option>
+    <option value="pskov">Псков</option>
+    <option value="krasnogorsk">Красногорск</option>
+    <option value="armavir">Армавир</option>
+    <option value="abakan">Абакан</option>
+    <option value="balakovo">Балаково</option>
+    <option value="biysk">Бийск</option>
+    <option value="yuzhnoSakhalinsk">Южно-Сахалинск</option>
+    <option value="odintsovo">Одинцово</option>
+    <option value="ussuriysk">Уссурийск</option>
+    <option value="prokopyevsk">Прокопьевск</option>
+    <option value="rybinsk">Рыбинск</option>
+    <option value="norilsk">Норильск</option>
+    <option value="volgodonsk">Волгодонск</option>
+    <option value="syzran">Сызрань</option>
+    <option value="petropavlovskKamchatsky">Петропавловск-Камчатский</option>
+    <option value="kamenskUralsky">Каменск-Уральский</option>
+    <option value="novocherkassk">Новочеркасск</option>
+    <option value="almetyevsk">Альметьевск</option>
+    <option value="zlatoust">Златоуст</option>
+    <option value="severodvinsk">Северодвинск</option>
+    <option value="khasavyurt">Хасавюрт</option>
+    <option value="kerch">Керчь</option>
+    <option value="domodedovo">Домодедово</option>
+    <option value="salavat">Салават</option>
+    <option value="miass">Миасс</option>
+    <option value="kopeysk">Копейск</option>
+    <option value="pyatigorsk">Пятигорск</option>
+    <option value="electrostal">Электросталь</option>
+    <option value="maykop">Майкоп</option>
+    <option value="finding">Находка</option>
+    <option value="berezniki">Березники</option>
+    <option value="kolomna">Коломна</option>
+    <option value="shchelkovo">Щёлково</option>
+    <option value="serpukhov">Серпухов</option>
+    <option value="carpets">Ковров</option>
+    <option value="neftekamsk">Нефтекамск</option>
+    <option value="kislovodsk">Кисловодск</option>
+    <option value="bataysk">Батайск</option>
+    <option value="rubtsovsk">Рубцовск</option>
+    <option value="obninsk">Обнинск</option>
+    <option value="kyzyl">Кызыл</option>
+    <option value="derbent">Дербент</option>
+    <option value="nefteyugansk">Нефтеюганск</option>
+    <option value="nazran">Назрань</option>
+    <option value="kaspiysk">Каспийск</option>
+    <option value="dolgoprudny">Долгопрудный</option>
+    <option value="novocheboksarsk">Новочебоксарск</option>
+    <option value="novomoskovsk">Новомосковск</option>
+    <option value="essentuki">Ессентуки</option>
+    <option value="nevinnomyssk">Невинномысск</option>
+    <option value="october">Октябрьский</option>
+    <option value="ramenskoe">Раменское</option>
+    <option value="pervouralsk">Первоуральск</option>
+    <option value="mikhailovsk">Михайловск</option>
+    <option value="reutov">Реутов</option>
+    <option value="cherkessk">Черкесск</option>
+    <option value="zhukovsky">Жуковский</option>
+    <option value="dimitrovgrad">Димитровград</option>
+    <option value="pushkino">Пушкино</option>
+    <option value="artem">Артём</option>
+    <option value="kamyshin">Камышин</option>
+    <option value="evpatoria">Евпатория</option>
+    <option value="murom">Муром</option>
+    <option value="khantyMansiysk">Ханты-Мансийск</option>
+    <option value="novyUrengoy">Новый Уренгой</option>
+    <option value="seversk">Северск</option>
+    <option value="orekhovoZuyevo">Орехово-Зуево</option>
+    <option value="arzamas">Арзамас</option>
+    <option value="noginsk">Ногинск</option>
+    <option value="novoshakhtinsk">Новошахтинск</option>
+    <option value="berdsk">Бердск</option>
+    <option value="eista">Элиста</option>
+    <option value="sergievPosad">Сергиев Посад</option>
+    <option value="prominent">Видное</option>
+    <option value="achinsk">Ачинск</option>
+    <option value="tobolsk">Тобольск</option>
+    <option value="noyabrsk">Ноябрьск</option>
+  </select>
+  <p>Загрузить фото профиля</p>
+  <p><input type="file" id="js-file"></p>
+</div>
+  </p>
+
+  <p class="form-actions"><button type="submit" >Зарегистрироваться</button> </p>
+</form>
+  <p th:style=" 'font-size: 2rem;'"><a href="/"  >назад</a></a></p>
+</div>
+<script>
+  $(function () {
+    var formData = new FormData();
+
+    $("#js-file").change(function () {
+      if (window.FormData === undefined) {
+        throw('В вашем браузере FormData не поддерживается')
+      } else {
+        formData.append('file', $("#js-file")[0].files[0]);
+      }
+    });
+
+    $('button').bind('click', function () {
+
+      var isWoman = '-1';
+
+      if ($('#man_female').prop("checked")) {
+        isWoman = 'мужской';
+      }
+
+      if ($('#woman_female').prop("checked")) {
+        isWoman = 'женский';
+      }
+
+      formData.append('login', $('#login').val())
+      formData.append('password', $('#password').val())
+      formData.append('isWoman', isWoman)
+      formData.append('age', $('#selectAge option:selected').html())
+      formData.append('job', $('#selectJob option:selected').html())
+      formData.append('national', $('#selectNationality option:selected').html())
+      formData.append('town', $('#selectTown option:selected').html())
+
+      if (($('#login').val() === '') || ($('#password').val() === '') ||
+              (formData.get('isWoman') === '-1') || ($('#selectAge').val() === 'nullAge') ||
+              ($('#selectJob').val() === 'nullJob') ||
+              ($('#selectNationality').val() === 'nullNat') ||
+              ($('#selectTown').val() === 'nullTown')) {
+        throw('Ошибка. Логин, пароль,пол, возраст, профессия, национальность и город проживания являются обязательными параметрами. Заполните их');
+      }
+
+      $('#form').remove();
+
+      $.ajax({
+        type: "POST",
+        url: '/savePhoto',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        function(data,status){
+          if (status==='success') {
+            alert('Успешно обновлены данные!')
+          } else {
+            throw('Ошибки при обновлении! Проверьте корректность данных'+msg.error);
+          }
+        }
+      })
+
+    })
+  });
+</script>
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?2eylzu");
+  src: url("../fonts/icomoon.eot?2eylzu#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?2eylzu") format("truetype"),
+    url("../fonts/icomoon.woff?2eylzu") format("woff"),
+    url("../fonts/icomoon.svg?2eylzu#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-instagram:before {
+  content: "\e90c";
+  color: #e4405f;
+}
+.icon-telegram:before {
+  content: "\e90d";
+  color: #2ca5e0;
+}
+.icon-google:before {
+  content: "\e90e";
+  color: #4285f4;
+}
+.icon-youtube:before {
+  content: "\e90f";
+  color: #f00;
+}
+.icon-whatsapp:before {
+  content: "\e910";
+  color: #25d366;
+}
+.icon-chevron-thin-right:before {
+  content: "\e900";
+}
+.icon-menu:before {
+  content: "\e901";
+}
+.icon-network:before {
+  content: "\e902";
+}
+.icon-arrow_back_ios:before {
+  content: "\e911";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e903";
+}
+.icon-keyboard_arrow_left:before {
+  content: "\e904";
+}
+.icon-menu1:before {
+  content: "\e90b";
+}
+.icon-user1:before {
+  content: "\e905";
+}
+.icon-settings:before {
+  content: "\e906";
+}
+.icon-log-out:before {
+  content: "\e907";
+}
+.icon-log-in:before {
+  content: "\e908";
+}
+.icon-search:before {
+  content: "\e909";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-search1:before {
+  content: "\e986";
+}
+.icon-google1:before {
+  content: "\ea88";
+}
+.icon-google-plus:before {
+  content: "\ea8b";
+}
+.icon-instagram1:before {
+  content: "\ea92";
+}
+.icon-whatsapp1:before {
+  content: "\ea93";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube1:before {
+  content: "\ea9d";
+}
+.icon-user2:before {
+  content: "\e90a";
+}
+.icon-envelope-o:before {
+  content: "\f003";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+.icon-angle-left:before {
+  content: "\f104";
+}
+.icon-angle-right:before {
+  content: "\f105";
+}
+.icon-envelope-open-o:before {
+  content: "\f2b7";
+}
+.icon-telegram1:before {
+  content: "\f2c6";
+}

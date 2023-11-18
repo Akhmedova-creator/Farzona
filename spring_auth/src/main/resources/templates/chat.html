@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Chat WebSocket</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" th:src="@{/js/error.js}"></script>
+        <script type="text/javascript" th:src="@{/js/sockjs-0.3.4.js}"></script>
+        <script type="text/javascript" th:src="@{/js/stomp.js}"></script>
+        <script type="text/javascript" th:src="@{/js/cookies.js}"></script>
+        <link th:href="@{/styles/css/hidden.css}" rel="stylesheet" />
+    <script type="text/javascript">
+
+        var stompClient = null;
+        $(window).on('load', function() {
+            connect();
+
+            $('#myLogin').val($.cookie('user'))
+            $('#myPassword').val($.cookie('pass'))
+            $.get("/getOneUser", {login: $('#myLogin').val(), pass: $('#myPassword').val()}).done(function (user) {
+                $('#myId').val(user.id) ;
+                $.get("/messages", {senderId: $('#id').val(), recipientId: $('#myId').val() }).done(function (messages) {
+                    messages.forEach(function (message) {
+                        if(message.recipientId===$('#id').val()) {
+                            $('#msg').append('<div id="third" >' + message.content + '</div>');
+                        }
+                        else {
+                            $('#msg').append('<div id="third" style="color:#0000FF" >' + message.content + '</div>');
+                        }
+
+                    });
+                })
+            })
+        });
+
+        function connect() {
+            var socket =  new SockJS("http://158.160.60.155:9999/ws");
+            stompClient = Stomp.over(socket);msg
+            stompClient.connect({}, function(frame) {
+                console.log('Connected: ' + frame);
+                stompClient.subscribe('/topic/'+$('#myId').val()+'/queue/messages', function(messageOutput) {
+                    $('#msg').append('<div id="third" style="color:#0000FF" >' + JSON.parse(messageOutput.body).msg+ '</div>')});
+                });
+
+        }
+
+        function disconnect() {
+            if(stompClient != null) {
+                stompClient.disconnect();
+            }
+            console.log("Disconnected");
+        }
+
+        function sendMessage() {
+            if ( $('#text').val() != '') {
+                const message = {
+                    senderId: $('#myId').val(),
+                    recipientId: $('#id').val(),
+                    senderName: $('#myLogin').val(),
+                    recipientName: $('#login').val(),
+                    content: $('#text').val(),
+                    timestamp: new Date()
+                }
+                stompClient.send("/app/chats", {},
+                    JSON.stringify(message));
+                $('#msg').append('<div id="third">'+$('#text').val()+'</div>');
+                $('#text').val("");
+            }
+
+        }
+
+        function showMessageOutput(messageOutput) {
+            var response = document.getElementById('response');
+            var p = document.createElement('p');
+            p.style.wordWrap = 'break-word';
+            p.appendChild(document.createTextNode(messageOutput.from + ": "
+                + messageOutput.text + " (" + messageOutput.time + ")"));
+            response.appendChild(p);
+        }
+    </script>
+</head>
+<body th:style="'background: url(/images/users.png) no-repeat center center fixed;  background-size: cover; color: red; '">
+<div>
+    <div id="hidden">
+        <input type="text" id="id" th:value="${id}" />
+        <input type="text" id="login" th:value="${login}" />
+        <input type="text" id="myLogin" />
+        <input type="text" id="myPassword" />
+        <input type="text" id="myId" />
+    </div>
+    <div id="msg"></div>
+    <div id="conversationDiv">
+        <p>
+        <input type="text" id="text" />
+        <button id="sendMessage" onclick="sendMessage();">Отправить</button>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

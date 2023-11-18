@@ -1,0 +1,31 @@
+server:
+  port: 443
+  # The format used for the keystore. It could be set to JKS in case it is a JKS file
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    # The path to the keystore containing the certificate
+    key-store: classpath:ssl/certificate2.pfx
+    # The password used to generate the certificate
+    key-store-password: 919556656_f
+
+spring:
+  data:
+    mongodb:
+#      authentication-database: admin
+      username: root
+      password: root
+      database: dating_site
+      port: 27017
+      host: 158.160.60.155
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mongock:
+    runner-type: "ApplicationRunner" # default
+    #runner-type: "InitializingBean"
+    change-logs-scan-package:
+      - ru.otus.spring.mongock.changelog
+

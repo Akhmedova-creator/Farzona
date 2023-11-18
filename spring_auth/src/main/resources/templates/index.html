@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link  href="https://fonts.googleapis.com" rel="preconnect" />
+    <link  href="https://fonts.gstatic.com"  rel="preconnect" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,400;8..144,700&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link th:href="@{/styles/css/normalize.css}" rel="stylesheet" />
+    <link th:href="@{/styles/css/fonts.css}" rel="stylesheet" />
+    <link th:href="@{/styles/css/style.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <div class="header__inner">
+            <a class="logo" href="#">
+              <img class="logo__img" th:src="@{/images/LogoSL.svg}" alt="Логотип" />
+            </a>
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__list-item">
+                  <a href="/users" class="header__log">Войти</a>
+                </li>
+                <li class="menu__list-item">
+                  <a href="/registration" class="header__reg">Регистрация</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container adv">
+          <div class="advertising">
+            <h1>Cайт для успешных мужчин и достойных женщин</h1>
+            <p>
+              Сайт предназначен для успешных мужчин, которые устали платить
+              деньги за интим и хотят найти соответствующих им девушек -
+              достойных. Для этого на сайте при регистрации необходимо указать
+              профессию, иначе зарегистрироваться не получится. Также на сайте
+              есть возможность искать девушек по профессии. Ни для кого не
+              секрет, что девушка с хорошим образованием, как правило, хорошо
+              воспитанная и приличная. Девушкам наш сайт тоже подходит, так как
+              многие девушки устали встречаться с мужчинами, которые не готовы
+              ухаживать, дарить цветы и проявлять заботу. Правила нашего сайта
+              таковы, что девушки не должны просить деньги за встречи, а
+              мужчины, в свою очередь, не должны предлагать одноразовые встречи
+              и готовы организовать, как минимум, роматический ужин :). Также на
+              сайте есть много интересных фич: поиск по национальности,
+              интересные тесты и рейтинги.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="#" class="btn-love">Любовь</a>
+            <a href="#" class="btn-success">Успех </a>
+          </div>
+        </div>
+
+
+        <div class="slider-box">
+          <div class="swiper mySwiper">
+            <div id="swiper" class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1330.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1331.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1332.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1333.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1334.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1335.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1336.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1337.jpg}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img th:src="@{/images/Rectangle 1338.jpg}" alt="" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="cities">
+            <div class="column">
+              <ul class="city">
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+                <li><a href="#" class="city">Высоковск</a></li>
+                <li><a href="#" class="city">Голицыно</a></li>
+                <li><a href="#" class="city">Дзержинский</a></li>
+                <li><a href="#" class="city">Дмитров</a></li>
+                <li><a href="#" class="city">Долгопрудный</a></li>
+                <li><a href="#" class="city">Домодедово</a></li>
+                <li><a href="#" class="city">Дрезна</a></li>
+                <li><a href="#" class="city">Дубна</a></li>
+                <li><a href="#" class="city">Егорьевск</a></li>
+                <li><a href="#" class="city">Жуковский</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="line"></div>
+          <nav class="footer-menu">
+            <ul class="footer-menu-list footer-menu-list-1">
+              <li class="fm-item">
+                <p class="fm-titul download">Скачайте приложение</p>
+              </li>
+              <li class="fm-item fm-item-1">
+                <ul class="app">
+                  <li class="app-item">
+                    <a class="app-link" href="#">
+                      <img class="app__img" th:src="@{/images/Google-play.svg}" alt="" />
+                    </a>
+                  </li>
+                  <li class="app-item">
+                    <a class="app-link" href="#">
+                      <img class="app__img" th:src="@{/images/App-store.svg}" alt="" />
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="footer-menu-list">
+              <li class="fm-item"><p class="fm-titul">Частые вопросы</p></li>
+              <li class="fm-item"><a href="#" class="fm-link">Страны</a></li>
+              <li class="fm-item"><a href="#" class="fm-link">Пресса</a></li>
+              <li class="fm-item"><a href="#" class="fm-link">Контакты</a></li>
+              <li class="fm-item"><a href="#" class="fm-link">Промокод</a></li>
+            </ul>
+            <ul class="footer-menu-list">
+              <li class="fm-item">
+                <p class="fm-titul">Юридическая информация</p>
+              </li>
+              <li class="fm-item">
+                <a href="#" class="fm-link">Конфиденциальность</a>
+              </li>
+              <li class="fm-item"><a href="#" class="fm-link">Условия</a></li>
+              <li class="fm-item">
+                <a href="#" class="fm-link"
+                  >Политика в отношении файлов Cookie</a
+                >
+              </li>
+              <li class="fm-item">
+                <a href="#" class="fm-link">Интеллектуальная собственность</a>
+              </li>
+            </ul>
+            <ul class="footer-menu-list">
+              <li class="fm-item"><p class="fm-titul">Контакты</p></li>
+              <li class="fm-item">
+                <a href="#" class="fm-link footer-mail"
+                  >Fazik_agent007@mail.ru</a
+                >
+              </li>
+              <li class="fm-item">
+                <a href="#" class="fm-link footer-phone">8(971) 873 88 33</a>
+              </li>
+            </ul>
+            <ul class="footer-menu-list">
+              <li class="fm-item"><p class="fm-titul">Социальные сети</p></li>
+              <li class="fm-item">
+                <a href="#" class="fm-link footer-net"></a>
+              </li>
+              <li class="fm-item"><a href="#" class="fm-link"></a></li>
+              <li class="fm-item"><a href="#" class="fm-link"></a></li>
+              <li class="fm-item">
+                <a href="#" class="fm-link"
+                  >© 2023 Fara Group, LLC. Все права защищены.</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+      <div class="container-bi2">
+        <img th:src="@{/images/substrate-summer.svg}" alt="" />
+      </div>
+      <div class="container-bi">
+        <img th:src="@{/images/summer.png}" alt="" />
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+  </body>
+</html>
+
+<script>
+ $(function () {
+        $.get('getUsers').done(function (users) {
+            users.forEach(function (user) {
+            var image="/images/"+user.photoName;
+            $ ('#swiper').prepend(`<div style="display: flex; text-align: center; justify-content:center; align-items: center;" ><img style="display: block; width: 203px; height: 100%; object-fit: cover;" src=${image}></img></div>`);
+           });
+        })
+    });
+
+</script>
